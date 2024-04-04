@@ -84,9 +84,9 @@ const LoginView = () => {
           </button>
           <div className="flex items-center w-full justify-center mt-2">
             <p className="text-sm">
-              Don't have an account? please{" "}
+              Don{"'"}t have an account? please {""}
               <Link href={"/auth/register"}>
-                <span className="text-blue-600 hover: ">Sign Up</span>
+                <span className="text-blue-600">Sign Up</span>
               </Link>
             </p>
           </div>

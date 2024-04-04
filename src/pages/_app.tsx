@@ -1,3 +1,4 @@
+import Navigation from "@/components/layout/Navbar";
 import "@/styles/globals.css";
 import { SessionProvider } from "next-auth/react";
 import type { AppProps } from "next/app";
@@ -16,6 +17,7 @@ export default function App({
   return (
     <SessionProvider session={session}>
       <div className={Noto.className}>
+        <Navigation />
         <Component {...pageProps} />;
       </div>
     </SessionProvider>
