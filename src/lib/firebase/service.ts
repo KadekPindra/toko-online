@@ -29,7 +29,7 @@ export async function retrieveDataById(collectionName: string, id: string) {
 
 export async function signUp(
   userData: {
-    name: string;
+    username: string;
     email: string;
     password: string;
     phone: string;
@@ -59,5 +59,21 @@ export async function signUp(
         callback(false);
         console.log(error);
       });
+  }
+}
+
+export async function signIn(email: string) {
+  const q = query(collection(firestore, "users"), where("email", "==", email));
+
+  const snapshot = await getDocs(q);
+  const data = snapshot.docs.map((doc) => ({
+    id: doc.id,
+    ...doc.data(),
+  }));
+
+  if (data) {
+    return data[0];
+  } else {
+    return null;
   }
 }
