@@ -1,9 +1,7 @@
-import { set } from "firebase/database";
 import { signIn } from "next-auth/react";
-import { redirect } from "next/dist/server/api-utils";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { FormEvent, use, useState } from "react";
+import { FormEvent, useState } from "react";
 
 const LoginView = () => {
   const [isLoading, setIsLoading] = useState(false);

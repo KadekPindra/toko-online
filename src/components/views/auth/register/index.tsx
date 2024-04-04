@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { FormEvent, use, useState } from "react";
+import { FormEvent, useState } from "react";
 
 const RegisterView = () => {
   const [isLoading, setIsLoading] = useState(false);
