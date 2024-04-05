@@ -6,7 +6,7 @@ import ReactDOM from 'react-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faCartShopping, faCircle, faTimes, faUser } from "@fortawesome/free-solid-svg-icons";
 import React, { useEffect, useState } from "react";
-import { signIn, signOut, useSession } from "next-auth/react";
+
 
 const Sidebar = ({ isOpen, onClose } : any) => {
 const [isClosing, setIsClosing] = useState(false);
@@ -49,7 +49,7 @@ const [isClosing, setIsClosing] = useState(false);
 };
 
 const Navigation = () => {
-    const { data } = useSession();
+
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     const [isBlurred, setIsBlurred] = useState(false);
 
@@ -88,9 +88,7 @@ const Navigation = () => {
                         height: 40,
                     }} 
                    />
-                   <button className="ml-5 bg-blue-500 px-4 py-3 font-semibold rounded-lg text-white" onClick={() => (data ? signOut() : signIn())}>
-                        {data ? 'Logout' : 'Login'}
-                   </button>
+                   
                 </div>
                 <div className="text-xl gap-10 md:flex hidden md:ml-auto">
                     <Link href="/">

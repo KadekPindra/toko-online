@@ -1,3 +1,5 @@
+import Button from "@/shared-components/button/Button";
+import Input from "@/shared-components/input/Input";
 import { signIn } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
@@ -48,48 +50,26 @@ const LoginView = () => {
           </div>
         </div>
         <form onSubmit={handleSubmit} className="flex w-full flex-col gap-2">
-          <div className="flex flex-col gap-1">
-            <label htmlFor="email" className="text-sm">
-              Email
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="Email"
-              className="border shadow-md placeholder:text-sm outline-blue-600 text-sm pl-3 border-gray-300 p-2 rounded-xl "
-              required
-            />
-          </div>
-          <div className="flex flex-col gap-1">
-            <label htmlFor="password" className="text-sm">
-              Password
-            </label>
-            <input
-              type="password"
-              id="password"
-              name="password"
-              placeholder="Password"
-              className="border shadow-md placeholder:text-sm outline-blue-600 text-sm pl-3 border-gray-300 p-2 rounded-xl "
-              required
-            />
-          </div>
+          <Input label="Email" type="email" name="email" placeholder="Email" />
+          <Input
+            label="Password"
+            type="password"
+            name="password"
+            placeholder="Password"
+          />
           <div className="w-full flex justify-center ">
             {error && <p className="text-red-500 text-sm">{error}</p>}
           </div>
-          <button
-            type="submit"
-            className="bg-blue-600 mt-5 hover:bg-blue-500 transition ease-in-out duration-300 text-white py-2 text-sm rounded-3xl "
-          >
+          <Button type="submit" color="default" variant="contained" className="mt-5 py-2">
             {isLoading ? "Loading..." : "Login"}
-          </button>
+          </Button>
+
           <p className="w-full flex items-center justify-center my-2">or</p>
-          <button type="button" onClick={() => signIn('google', { callbackUrl, redirect: false })}>
-            <div className="w-full flex py-1 px-11 border-2 border-slate-400 rounded-3xl items-center justify-between">
-              <Image src="/google.png" alt="google" width={29} height={29} />
-              <p>Sign in with Google</p>
-            </div>
-          </button>
+          <Button onClick={() => signIn('google', { callbackUrl, redirect: false })} type="button" color="default" variant="outlined" className="flex items-center text- justify-between px-11 py-1 border-slate-400">
+            <Image src="/google.png" alt="google" width={30} height={30} />
+            <p>Sign in with Google</p>
+          </Button>
+          
           <div className="flex items-center w-full justify-center mt-2">
             <p className="text-sm">
               Don{"'"}t have an account? please {""}

@@ -1,6 +1,6 @@
 import { NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
-import { loginWithGoogle, signIn } from "@/lib/firebase/service";
+import { loginWithGoogle, signIn } from "@/services/auth/auth";
 import { compare } from "bcrypt";
 import GoogleProvider from "next-auth/providers/google";
 import NextAuth from "next-auth/next";
@@ -44,7 +44,7 @@ const authOptions: NextAuthOptions = {
     async jwt({ token, account, profile, user }: any) {
       if (account?.provider === "credentials") {
         token.email = user.email;
-        token.username = user.username;
+        token.username = user.username; 
         token.phone = user.phone;
       }
 

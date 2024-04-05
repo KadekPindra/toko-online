@@ -27,19 +27,8 @@ export async function retrieveDataById(collectionName: string, id: string) {
   return data;
 }
 
-export async function signUp(
-  userData: {
-    username: string;
-    email: string;
-    password: string;
-    phone: string;
-  },
-  callback: Function
-) {
-  const q = query(
-    collection(firestore, "users"),
-    where("email", "==", userData.email)
-  );
+export async function retrieveDataByField(collectionName: string, field: string, value: string) {
+  const q = query(collection(firestore, collectionName), where(field, '==', value));
 
   const snapshot = await getDocs(q);
   const data = snapshot.docs.map((doc) => ({
@@ -47,11 +36,11 @@ export async function signUp(
     ...doc.data(),
   }));
 
-  if (data.length > 0) {
-    callback(false);
-  } else {
-    userData.password = await bcrypt.hash(userData.password, 10);
-    await addDoc(collection(firestore, "users"), userData)
+  return data;
+}
+
+export async function addData(collectionName: string, data: any, callback: Function) {
+  await addDoc(collection(firestore, collectionName), data)
       .then(() => {
         callback(true);
       })
@@ -59,41 +48,6 @@ export async function signUp(
         callback(false);
         console.log(error);
       });
-  }
 }
 
-export async function signIn(email: string) {
-  const q = query(collection(firestore, "users"), where("email", "==", email));
 
-  const snapshot = await getDocs(q);
-  const data = snapshot.docs.map((doc) => ({
-    id: doc.id,
-    ...doc.data(),
-  }));
-
-  if (data) {
-    return data[0];
-  } else {
-    return null;
-  }
-}
-
-export async function loginWithGoogle(data: any, callback: Function){
-  const q = query(collection(firestore, "users"), where("email", "==", data.email));
-
-  const snapshot = await getDocs(q);
-  const user = snapshot.docs.map((doc) => ({
-    id: doc.id,
-    ...doc.data(),
-  }));
-
-  if (user.length > 0) {
-    callback(user[0]);
-  } else {
-    data.role = 'member';
-    await addDoc(collection(firestore, 'users'), data).then(() => {
-      callback(data)
-    })
-  }
-
-}
