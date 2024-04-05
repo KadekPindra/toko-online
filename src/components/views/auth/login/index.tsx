@@ -1,4 +1,5 @@
 import { signIn } from "next-auth/react";
+import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { FormEvent, useState } from "react";
@@ -38,7 +39,7 @@ const LoginView = () => {
 
   return (
     <div className="w-full h-screen fixed flex items-center justify-center">
-      <div className="container flex flex-col p-6 space-y-4 rounded-lg items-center bg-white drop-shadow-2xl w-[335px] h-[400px] justify-center  border-2 border-blue-600">
+      <div className="container flex flex-col p-6 space-y-4 rounded-lg items-center bg-white drop-shadow-2xl w-[335px] h-fit justify-center  border-2 border-blue-600">
         <div className="flex flex-col items-center justify-center w-72 align-middle">
           <p className="text-sm">Hi Visitors, Welcome back to</p>
           <h1 className="text-2xl font-bold mb-2">Online Shop Website</h1>
@@ -81,6 +82,13 @@ const LoginView = () => {
             className="bg-blue-600 mt-5 hover:bg-blue-500 transition ease-in-out duration-300 text-white py-2 text-sm rounded-3xl "
           >
             {isLoading ? "Loading..." : "Login"}
+          </button>
+          <p className="w-full flex items-center justify-center my-2">or</p>
+          <button type="button" onClick={() => signIn('google', { callbackUrl, redirect: false })}>
+            <div className="w-full flex py-1 px-11 border-2 border-slate-400 rounded-3xl items-center justify-between">
+              <Image src="/google.png" alt="google" width={29} height={29} />
+              <p>Sign in with Google</p>
+            </div>
           </button>
           <div className="flex items-center w-full justify-center mt-2">
             <p className="text-sm">
