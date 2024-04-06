@@ -1,6 +1,7 @@
 import bcrypt from "bcrypt";
 import { addData, retrieveDataByField } from "@/lib/firebase/service";
 
+
 export async function signUp(
     userData: {
       username: string;
