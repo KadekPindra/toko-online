@@ -65,7 +65,7 @@ const LoginView = () => {
           </Button>
 
           <p className="w-full flex items-center justify-center my-2">or</p>
-          <Button onClick={() => signIn('google', { callbackUrl, redirect: false })} type="button" color="default" variant="outlined" className="flex items-center text- justify-between px-11 py-1 border-slate-400">
+          <Button onClick={() => signIn('google', { callbackUrl, redirect: false })} type="button" color="default" variant="outlined" className="flex items-center text- justify-between px-11 py-1">
             <Image src="/google.png" alt="google" width={30} height={30} />
             <p>Sign in with Google</p>
           </Button>

@@ -1,7 +1,7 @@
 type Buttontypes = {
     type: "button" | "submit" | "reset" | undefined;
     onClick?: () => void;
-    children: React.ReactNode;
+    children?: React.ReactNode;
     className?: string;
     variant?: "contained" | "text" | "outlined";
     color?: "default" | "primary" | "secondary" | "danger";
@@ -23,7 +23,7 @@ const Button = (props: Buttontypes) => {
 
     const outlined = "border bg-white";
     const outlinedOrange = `text-orange-800 border-orange-800 hover:border-orange-700 active:border-orange-900`;
-    const outlinedBlack = `text-black border-black hover:border-black active:border-black`;
+    const outlinedBlack = `text-black  border-gray-700 hover:border-black active:border-black`;
     const outlinedBlue = `text-blue-500 border-blue-500 hover:border-blue-600 active:border-blue-700`;
     const outlinedRed = `text-red-500 border-red-500 hover:border-red-600 active:border-red-700`;
 
@@ -58,7 +58,7 @@ const Button = (props: Buttontypes) => {
             type={type} 
             onClick={onClick}
             >
-            <div className={`${styles.join(" ")} text-sm rounded-3xl transition ease-in-out duration-300 ${className} `}>
+            <div className={`${styles.join(" ")} border-2 text-sm rounded-3xl transition ease-in-out duration-300 ${className} `}>
               {children}
             </div>
           </button>

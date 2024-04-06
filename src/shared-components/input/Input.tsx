@@ -1,20 +1,22 @@
-type Propstypes = {
+import React from "react";
+
+type Inputtypes = {
     label: string;
     type: string;
     placeholder: string;
     name: string;
-    classname?: string;
+    className?: string;
     children?: React.ReactNode;
 }
 
-const Input = (props : Propstypes) => {
-    const { label, name, type, placeholder, classname, children } = props;
+const Input = (props : Inputtypes) => {
+    const { label, name, type, placeholder, className, children } = props;
 
     return(
     <div className="flex flex-col gap-1">
         <label htmlFor={name} className="text-sm">{label}</label>
         <input
-            className={`border shadow-md placeholder:text-sm outline-blue-600 text-sm pl-3 border-gray-300 p-2 rounded-xl ${classname}`}
+            className={`border-2 rounded-xl shadow-md outline-blue-600 text-sm pl-3 border-gray-500 p-2 ${className}`}
             type={type}
             id={name}
             name={name}
@@ -26,4 +28,4 @@ const Input = (props : Propstypes) => {
     )
 }
 
-export default Input
+export default Input;
