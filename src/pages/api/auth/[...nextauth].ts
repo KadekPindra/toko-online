@@ -44,8 +44,9 @@ const authOptions: NextAuthOptions = {
     async jwt({ token, account, profile, user }: any) {
       if (account?.provider === "credentials") {
         token.email = user.email;
-        token.username = user.username;
+        token.fullname = user.fullname;
         token.phone = user.phone;
+        token.role = user.role;
       }
 
       if (account?.provider === "google") {
@@ -73,6 +74,9 @@ const authOptions: NextAuthOptions = {
       }
       if ("phone" in token) {
         session.user.phone = token.phone;
+      }
+      if ("role" in token) {
+        session.user.role = token.role;
       }
       return session;
     },
