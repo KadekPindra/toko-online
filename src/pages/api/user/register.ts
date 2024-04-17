@@ -20,7 +20,7 @@ export default async function handler(
   } else {
     res
       .status(405)
-      .json({ status: false, statusCode: 405, message: "Metod not Allowed" });
+      .json({ status: false, statusCode: 405, message: "Method not Allowed" });
   }
 
   res.status(200).json({ status: true, message: "success" });

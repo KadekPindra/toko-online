@@ -16,16 +16,16 @@ const Button = (props: Buttontypes) => {
     const containedBlack = "bg-black hover:bg-slate-800 active:bg-slate-900 ";
 
     const textWhite = "text-white";
-    const textGray = "text-gray-500 hover:text-gray-600 active:text-gray-700";
+    const textGray = "text-gray-800 hover:text-gray-600 active:text-gray-700";
     const textOrange = "text-orange-800 hover:text-orange-700 active:text-orange-900"; 
     const textBlue = "text-blue-500 hover:text-blue-600 active:text-blue-700";
     const textRed = "text-red-500 hover:text-red-600 active:text-red-700";
 
-    const outlined = "border bg-white";
-    const outlinedOrange = `text-orange-800 border-orange-800 hover:border-orange-700 active:border-orange-900`;
-    const outlinedBlack = `text-black  border-gray-700 hover:border-black active:border-black`;
-    const outlinedBlue = `text-blue-500 border-blue-500 hover:border-blue-600 active:border-blue-700`;
-    const outlinedRed = `text-red-500 border-red-500 hover:border-red-600 active:border-red-700`;
+    const outlined = " border bg-white";
+    const outlinedOrange = `text-orange-800 border-2  border-orange-800 hover:border-orange-700 active:border-orange-900`;
+    const outlinedGray = `text-black border-2   border-gray-700 hover:border-gray-800 active:border-gray-900`;
+    const outlinedBlue = `text-blue-500 border-2  border-blue-500 hover:border-blue-600 active:border-blue-700`;
+    const outlinedRed = `text-red-500 border-2  border-red-500 hover:border-red-600 active:border-red-700`;
 
     const styles: string[] = [];
 
@@ -47,18 +47,18 @@ const Button = (props: Buttontypes) => {
         styles.push(outlined);
         if (color == "primary") styles.push(outlinedOrange);
         if (color == "secondary") styles.push(outlinedBlue);
-        if (color == "default") styles.push(outlinedBlack);
+        if (color == "default") styles.push(outlinedGray);
         if (color == "danger") styles.push(outlinedRed);
       }
 
 
     return (
         <>
-        <button 
+          <button 
             type={type} 
             onClick={onClick}
             >
-            <div className={`${styles.join(" ")} border-2 text-sm rounded-3xl transition ease-in-out duration-300 ${className} `}>
+            <div className={`${styles.join(" ")} text-sm rounded-3xl transition ease-in-out duration-300 ${className} `}>
               {children}
             </div>
           </button>

@@ -5,12 +5,13 @@ import Link from "next/link";
 
 type Formtypes = {
     children: JSX.Element,
+    error?: string,
     label?: string,
     title?: string,
 }
 
 const AuthLayout = (props: Formtypes) => {
-    const {children, label, title} = props
+    const {children, error, label, title} = props
     return(
     <div className="w-full h-screen fixed flex items-center justify-center">
       <div className="container flex flex-col p-6 space-y-4 rounded-lg items-center bg-white drop-shadow-2xl w-[335px] h-fit justify-center  border-2 border-blue-600">
