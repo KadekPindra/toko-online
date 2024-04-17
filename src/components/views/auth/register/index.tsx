@@ -38,7 +38,7 @@ const RegisterView = () => {
   };
 
   return (
-    <AuthLayout label="Hi Visitors, Welcome to" title="Online Shop Website">
+    <AuthLayout error={error} label="Hi Visitors, Welcome to" title="Online Shop Website">
       <form onSubmit={handleSubmit} className="flex w-full flex-col gap-2">
           <Input label="Name" type="text" name="username" placeholder="Enter your name"/>
           <Input label="Email" type="email" name="email" placeholder="Enter your email">{error && <p className="text-red-500 text-sm">{error}</p>}</Input>

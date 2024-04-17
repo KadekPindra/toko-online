@@ -41,7 +41,7 @@ const LoginView = () => {
   };
 
   return (
-    <AuthLayout label="Hi Visitors, Welcome back to" title="Online Shop Website">
+    <AuthLayout error={error} label="Hi Visitors, Welcome back to" title="Online Shop Website">
       <form onSubmit={handleSubmit} className="flex w-full flex-col gap-2">
         <Input label="Email" type="email" name="email" placeholder="Email" />
         <Input label="Password" type="password" name="password" placeholder="Password"/>
@@ -51,7 +51,7 @@ const LoginView = () => {
         <Button 
          onClick={() => signIn('google', { callbackUrl, redirect: false })} 
          type="button" 
-         color="default" 
+         color="default"  
          variant="outlined" 
          className="flex items-center text- justify-between px-11 py-1"> 
           <Image src="/google.png" alt="google" width={30} height={30} />

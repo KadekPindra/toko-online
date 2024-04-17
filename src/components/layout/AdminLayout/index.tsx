@@ -12,7 +12,7 @@ type Propstypes = {
 const listSidebarItem = [
     {
         title: "Dashboard",
-        url: "/admin",
+        url: "/admin", 
         icon: 'bx bxs-dashboard',
     },
     {

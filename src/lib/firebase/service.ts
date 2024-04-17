@@ -6,12 +6,11 @@ import {
   getDoc,
   getDocs,
   getFirestore,
-  query,
+  query, 
   updateDoc,
   where,
 } from "firebase/firestore";
 import app from "./init";
-import bcrypt from "bcrypt";
 
 const firestore = getFirestore(app);
 export async function retrieveData(collectionName: string) {
@@ -70,7 +69,7 @@ export async function updateData(
 
 export async function deleteData(collectionName: string, id: string, callback: Function) {
   const docRef = doc(firestore, collectionName, id);
-  await deleteDoc(docRef)
+  await deleteDoc(docRef) 
   .then(() => {
     callback(true)
   }) 

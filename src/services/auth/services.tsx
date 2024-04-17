@@ -18,7 +18,7 @@ export async function signUp(
   
     if (data.length > 0) {
       callback(false);
-    } else {
+    } else { 
       if (!userData.role) {
         userData.role = 'member';
       }

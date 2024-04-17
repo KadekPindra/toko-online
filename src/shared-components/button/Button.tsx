@@ -54,7 +54,7 @@ const Button = (props: Buttontypes) => {
 
     return (
         <>
-        <button 
+          <button 
             type={type} 
             onClick={onClick}
             >

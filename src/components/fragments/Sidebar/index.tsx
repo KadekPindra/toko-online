@@ -1,6 +1,6 @@
 import Button from "@/shared-components/button/Button";
 import { signOut } from "next-auth/react";
-import Link from "next/link";
+import Link from "next/link"; 
 import { useRouter } from "next/router";
 
 type Propstypes = {
@@ -33,7 +33,7 @@ const Sidebar = (props: Propstypes) => {
             <Button 
              type="button" 
              variant="text" 
-             className="fixed bottom-0 px-5 rounded-lg w-60 py-2 hover:bg-slate-100 hover:shadow-sm mb-5 flex items-center text-lg gap-2"
+             className="absolute bottom-0 px-5 rounded-lg w-fit py-2 hover:bg-slate-100 hover:shadow-sm mb-5 flex items-center text-lg gap-2"
              onClick={() => signOut() }>
                 <i className='bx bx-log-out-circle text-3xl'></i>
                 <p>Logout</p>
