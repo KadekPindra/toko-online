@@ -6,7 +6,7 @@ type Inputtypes = {
     placeholder: string;
     name: string;
     className?: string;
-    children?: React.ReactNode;
+    children?: React.ReactNode; 
     defaultValue?: string;
     disabled?: boolean;
 }
@@ -18,7 +18,7 @@ const Input = (props : Inputtypes) => {
     <div className="flex flex-col gap-1">
         {label && <label htmlFor={name} className="text-sm">{label}</label>}
         <input
-            className={`border-2 rounded-xl shadow-md outline-blue-600 text-sm pl-3 border-gray-500 p-2 ${className}`}
+            className={`border-2 rounded-md shadow-md  outline-blue-600 text-sm pl-3 border-gray-500 p-2 ${className}`}
             type={type}
             id={name}
             name={name}

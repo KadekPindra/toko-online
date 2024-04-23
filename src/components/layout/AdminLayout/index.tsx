@@ -32,7 +32,7 @@ const AdminLayout = (props: Propstypes) => {
     return(
         <div className="flex">
             <div className="w-72">
-                <Sidebar lists={listSidebarItem}/>
+                <Sidebar label="Admin Page" lists={listSidebarItem}/>
             </div>
             <div className="w-full">
                 {children}

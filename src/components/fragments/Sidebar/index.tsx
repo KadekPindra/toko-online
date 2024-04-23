@@ -9,16 +9,18 @@ type Propstypes = {
         url: string;
         icon: string;
     }>
+    label: string;
 }
 
 const Sidebar = (props: Propstypes) => {
+    const {label} = props;
     const {lists} = props;
     const {pathname} = useRouter();
 
     return(
         <div className="h-screen p-5 bg-white shadow-xl border w-full ">
             <div>
-                <h1 className="text-xl w-full flex justify-center py-4">Admin Page</h1>
+                <h1 className="text-xl w-full flex justify-center py-4">{label}</h1>
                 <p className="bg-blue-600 w-full mb-5 h-[1px] flex justify-center items-center text-transparent">-</p>
                 {lists.map((list, index) => (
                     <Link

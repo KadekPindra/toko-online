@@ -58,7 +58,7 @@ const Button = (props: Buttontypes) => {
             type={type} 
             onClick={onClick}
             >
-            <div className={`${styles.join(" ")} text-sm rounded-3xl transition ease-in-out duration-300 ${className} `}>
+            <div className={`${styles.join(" ")} text-sm rounded-lg transition ease-in-out duration-300 ${className} `}>
               {children}
             </div>
           </button>
