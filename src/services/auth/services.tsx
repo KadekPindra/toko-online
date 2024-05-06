@@ -51,7 +51,7 @@ export async function signUp(
     password?: string
   }, callback: Function)  {
     const user = await retrieveDataByField('users', 'email', data.email);
-  
+   
     if (user.length > 0) {
       callback(user[0]);
     } else {

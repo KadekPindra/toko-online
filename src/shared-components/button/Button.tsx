@@ -4,7 +4,7 @@ type Buttontypes = {
     children?: React.ReactNode;
     className?: string;
     variant?: "contained" | "text" | "outlined";
-    color?: "default" | "primary" | "secondary" | "danger";
+    color?: "default" | "primary" | "secondary" | "danger" | "warning" | "success";
 }
 
 const Button = (props: Buttontypes) => {
@@ -20,6 +20,7 @@ const Button = (props: Buttontypes) => {
     const textOrange = "text-orange-800 hover:text-orange-700 active:text-orange-900"; 
     const textBlue = "text-blue-500 hover:text-blue-600 active:text-blue-700";
     const textRed = "text-red-500 hover:text-red-600 active:text-red-700";
+    const textGreen = "text-green-500 hover:text-green-600 active:text-green-700";
 
     const outlined = " border bg-white";
     const outlinedOrange = `text-orange-800 border-2  border-orange-800 hover:border-orange-700 active:border-orange-900`;
@@ -41,6 +42,7 @@ const Button = (props: Buttontypes) => {
         if (color == "secondary") styles.push(textBlue);
         if (color == "default") styles.push(textGray);
         if (color == "danger") styles.push(textRed);
+        if (color == "success") styles.push(textGreen);
     }
 
     if (variant == "outlined") {

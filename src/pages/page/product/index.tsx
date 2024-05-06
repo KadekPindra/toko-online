@@ -1,24 +1,26 @@
-import ProductAdminView from "@/components/views/admin/Product";
+import ProductView from "@/components/views/products";
 import productServices from "@/services/product";
 import { Product } from "@/types/product.type";
+import Head from "next/head";
 import { useEffect, useState } from "react";
 
-const AdminProductsPage = () => {
+const ProductPage = () => {
   const [products, setProducts] = useState<Product[]>([]);
-
-  useEffect(() => {
   const getAllProducts = async () => {
     const { data } = await productServices.getAllProducts();
     setProducts(data.data);
   };
-  
+  useEffect(() => {
     getAllProducts();
   }, []);
   return (
-    <div className="w-full bg-gray-50">
-      <ProductAdminView products={products} />
-    </div>
+    <>
+      <Head>
+        <title>Product Page</title>
+      </Head>
+      <ProductView products={products} />
+    </>
   );
 };
 
-export default AdminProductsPage;
+export default ProductPage;

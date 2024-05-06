@@ -3,8 +3,13 @@ import Button from "@/shared-components/button/Button";
 import Input from "@/shared-components/input/Input";
 import Modal from "@/shared-components/modal/Modal";
 import Select from "@/shared-components/select/Select";
+import { Product } from "@/types/product.type";
 import { useSession } from "next-auth/react";
-import { FormEvent, useState } from "react";
+import { Dispatch, FormEvent, SetStateAction, useState } from "react"; 
+
+
+
+
 
 const ModalUpdateUser = (props: any) => {
   const { updatedUser, setUpdatedUser, setUsersData } = props;

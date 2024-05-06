@@ -40,7 +40,7 @@ const UsersAdminView = (props: PropTypes) => {
                                 <th className="w-full flex p-2">Role</th>
                                 <th className="w-full flex p-2">Email</th>
                                 <th className="w-full flex p-2">Action</th>
-                            </tr> 
+                            </tr>  
                         </thead>
                         <tbody className="flex flex-col justify-center w-full">
                             {usersData.map((user: any, index: number) => (

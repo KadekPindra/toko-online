@@ -5,6 +5,7 @@ import type { AppProps } from "next/app";
 import { Lato, Noto_Sans, Poppins } from "next/font/google";
 import Head from "next/head";
 import { useRouter } from "next/router";
+import HomePage from "./page/home";
 ("next/font/google");
 
 const Noto = Noto_Sans({
